@@ -1,6 +1,5 @@
 import React, { Component, useState } from "react";
 import "./../styles/App.css";
-import City from "./City";
 // Do not alter the states const and values inside it.
 const states = [
   {
@@ -156,7 +155,7 @@ const states = [
 
 function App() {
   const handleState = (id) => {
-    states[id].cities.map((city, index) => {<City city=city.name index=index/>});
+    states[id].cities.map((city, index1) => console.log(city.name));
   };
   return (
     <div id="main">
