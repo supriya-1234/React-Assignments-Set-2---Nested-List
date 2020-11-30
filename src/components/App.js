@@ -156,6 +156,7 @@ const states = [
 
 function App() {
   const handleState = (id) => {
+    console.log(id);
     states[id].cities.map((city, index) => (
       <button id={`city${index}`} onClick={handleCity}>
         {city.name}
@@ -166,7 +167,7 @@ function App() {
   return (
     <div id="main">
       {states.map((state, index) => (
-        <button id={`state${index}`} onClick={(id) => handleState}>
+        <button id={`state${index + 1}`} onClick={() => handleState(index)}>
           {state.name}
         </button>
       ))}
