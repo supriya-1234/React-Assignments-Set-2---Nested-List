@@ -156,14 +156,11 @@ const states = [
 
 function App() {
   const handleState = (id) => {
-     states[id].cities.map((city, index) => (
-      
-      <button id={`city${index+1}`} onClick={handleCity}>
+    states[id].cities.map((city, index) => (
+      <button id={`city${index + 1}`} onClick={handleCity}>
         {city.name}
-        console.log(states[id].city.name);
       </button>
-      
-    ))};
+    ));
   };
   const handleCity = (id) => {};
   return (
