@@ -154,16 +154,35 @@ const states = [
 ];
 
 function App() {
+  const [stateClick, setStateClick] = useState(false);
+  const [cityClick, setCityClick] = useState(false);
   const handleState = (id) => {
     states[id].cities.map((city, index1) => console.log(city.name));
   };
   return (
     <div id="main">
-      {states.map((state, index) => (
-        <button id={`state${index + 1}`} onClick={() => handleState(index)}>
-          {state.name}
-        </button>
-      ))}
+      {states.map((state, index) => {
+        return (
+          <>
+            <li
+              id={`state${index + 1}`}
+              onClick={() => setStateClick(!stateClick)}
+            >
+              {state.name}
+            </li>
+            {stateClick
+              ? state[index].cities.map((city, index1) => (
+                  <li
+                    key={`city${index1 + 1}`}
+                    onClick={() => setCityClick(!cityClick)}
+                  >
+                    {city.name}
+                  </li>
+                ))
+              : null}
+          </>
+        );
+      })}
     </div>
   );
 }
