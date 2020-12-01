@@ -156,9 +156,7 @@ const states = [
 function App() {
   const [stateClick, setStateClick] = useState(false);
   const [cityClick, setCityClick] = useState(false);
-  const handleState = (id) => {
-    states[id].cities.map((city, index1) => console.log(city.name));
-  };
+
   return (
     <div id="main">
       {states.map((state, index) => {
