@@ -157,6 +157,7 @@ const states = [
 function App() {
   const [stateClick, setStateClick] = useState(false);
   const [cityClick, setCityClick] = useState(false);
+  const isChildren = true;
   return (
     <div id="main">
       {states.map((state, index) => {
@@ -173,6 +174,7 @@ function App() {
                 return (
                   <>
                     <li
+                      style={isChildren ? { marginLeft: "20px" } : {}}
                       id={`city${index + 1}`}
                       onClick={() => setCityClick(!cityClick)}
                     >
@@ -180,7 +182,12 @@ function App() {
                     </li>
                     {cityClick &&
                       city.towns.map((town, index) => (
-                        <li id={`town${index + 1}`}>{town.name}</li>
+                        <li
+                          style={isChildren ? { marginLeft: "40px" } : {}}
+                          id={`town${index + 1}`}
+                        >
+                          {town.name}
+                        </li>
                       ))}
                   </>
                 );
