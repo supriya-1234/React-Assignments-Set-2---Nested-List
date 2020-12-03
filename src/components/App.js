@@ -162,22 +162,22 @@ function App() {
       {states.map((state, index) => {
         return (
           <>
-            <button
+            <li
               id={`state${index + 1}`}
               onClick={() => setStateClick(!stateClick)}
             >
               {state.name}
-            </button>
+            </li>
             {stateClick &&
               state.cities.map((city, index) => {
                 return (
                   <>
-                    <button
+                    <li
                       id={`city${index + 1}`}
                       onClick={() => setCityClick(!cityClick)}
                     >
                       {city.name}
-                    </button>
+                    </li>
                     {cityClick &&
                       city.towns.map((town, index) => (
                         <li id={`town${index + 1}`}>{town.name}</li>
