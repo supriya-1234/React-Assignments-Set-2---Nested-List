@@ -24,4 +24,3 @@ export default function City({ city, index }) {
     </>
   );
 }
-©

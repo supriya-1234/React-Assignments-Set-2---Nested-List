@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import "./../styles/App.css";
-import State from "./State";
 // Do not alter the states const and values inside it.
+import State from "./State";
 const states = [
   {
     name: "Madhya Pradesh",
